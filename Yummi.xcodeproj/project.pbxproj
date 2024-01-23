@@ -14,6 +14,9 @@
 		245D3E882B5FC52F0020D605 /* YummiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D3E872B5FC52F0020D605 /* YummiTests.swift */; };
 		245D3E922B5FC52F0020D605 /* YummiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D3E912B5FC52F0020D605 /* YummiUITests.swift */; };
 		245D3E942B5FC52F0020D605 /* YummiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D3E932B5FC52F0020D605 /* YummiUITestsLaunchTests.swift */; };
+		245D3EA12B5FC7740020D605 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D3EA02B5FC7740020D605 /* Ingredient.swift */; };
+		245D3EA32B5FD16F0020D605 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D3EA22B5FD16F0020D605 /* Ingredients.swift */; };
+		245D3EA52B5FD31F0020D605 /* DateMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D3EA42B5FD31F0020D605 /* DateMaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		245D3E8D2B5FC52F0020D605 /* YummiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YummiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		245D3E912B5FC52F0020D605 /* YummiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummiUITests.swift; sourceTree = "<group>"; };
 		245D3E932B5FC52F0020D605 /* YummiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		245D3EA02B5FC7740020D605 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		245D3EA22B5FD16F0020D605 /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
+		245D3EA42B5FD31F0020D605 /* DateMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateMaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,9 @@
 			isa = PBXGroup;
 			children = (
 				245D3E7D2B5FC52E0020D605 /* Preview Assets.xcassets */,
+				245D3EA02B5FC7740020D605 /* Ingredient.swift */,
+				245D3EA22B5FD16F0020D605 /* Ingredients.swift */,
+				245D3EA42B5FD31F0020D605 /* DateMaker.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -257,8 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				245D3EA52B5FD31F0020D605 /* DateMaker.swift in Sources */,
+				245D3EA32B5FD16F0020D605 /* Ingredients.swift in Sources */,
 				245D3E792B5FC52A0020D605 /* ContentView.swift in Sources */,
 				245D3E772B5FC52A0020D605 /* YummiApp.swift in Sources */,
+				245D3EA12B5FC7740020D605 /* Ingredient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
