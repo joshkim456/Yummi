@@ -9,24 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var ingredient: Ingredient?
+    let ingredientExamples = Ingredients()
     
-    init() {
-            if let specificDate = DateMaker.makeDate(from: "2024-01-01") {
-                ingredient = Ingredient(name: "Apple", quantity: 20, unit: .kg, category: .fruitsAndVeg, expiryDate: specificDate)
+    @State private var selectedIngredient: Int = 0 {
+        didSet {
+            if selectedIngredient >= ingredientExamples.ingredients.count {
+                selectedIngredient = 0
             }
         }
+    }
     
     var body: some View {
         Form {
-            VStack {
-                if let ingredient = ingredient {
-                    Text(ingredient.displayInformation())
-                } else {
-                    Text("Invalid Date Format")
-                }
+            VStack(alignment: .leading, spacing: 20) {
+                Text(ingredientExamples.ingredients[selectedIngredient].displayInformation())
+                Button("Next ingredient", action: {
+                    selectedIngredient += 1
+                })
             }
-            
         }
     }
 }
