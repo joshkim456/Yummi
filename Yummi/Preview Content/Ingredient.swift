@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Category: String {
+enum Category: String, CaseIterable {
     case fruitsAndVeg = "Fruits & Veg"
     case meats = "Meats"
     case carbs = "Carbs"
@@ -15,7 +15,7 @@ enum Category: String {
     case dairy = "Dairy"
 }
 
-enum Units: String {
+enum Units: String, CaseIterable {
     case kg = "kg"
     case g = "g"
     case ml = "ml"

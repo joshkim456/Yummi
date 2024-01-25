@@ -11,6 +11,12 @@ struct ContentView: View {
     
     let ingredientExamples = Ingredients()
     
+    @State var inputName = ""
+    @State var inputQuantity = ""
+    @State var inputUnit = ""
+    @State var inputCategory = ""
+    @State var inputExpiryDate = ""
+    
     @State private var selectedIngredient: Int = 0 {
         didSet {
             if selectedIngredient >= ingredientExamples.ingredients.count {
@@ -19,13 +25,40 @@ struct ContentView: View {
         }
     }
     
+    @State private var selectedCategory: Category = .carbs
+    @State private var selectedUnit: Units = .g
+
+    
     var body: some View {
         Form {
-            VStack(alignment: .leading, spacing: 20) {
-                Text(ingredientExamples.ingredients[selectedIngredient].displayInformation())
-                Button("Next ingredient", action: {
-                    selectedIngredient += 1
-                })
+            Section {
+                VStack(alignment: .leading, spacing: 20) {
+                    Text(ingredientExamples.ingredients[selectedIngredient].displayInformation())
+                    Button("Next ingredient", action: {
+                        selectedIngredient += 1
+                    })
+                }
+            }
+            Section {
+                Text("Enter a new ingredient: ")
+                TextField("Name:", text: $inputName)
+                TextField("Quantity:", text: $inputQuantity)
+                
+                VStack {
+                    Picker("Category:", selection: $selectedCategory) {
+                        ForEach(Category.allCases, id: \.self) {
+                            category in Text(category.rawValue)
+                        }
+                    }
+                }
+                
+                VStack {
+                    Picker("Unit:", selection: $selectedUnit) {
+                        ForEach(Unit.allCases, id: \.self) {
+                            unit in Text(unit.rawValue)
+                        }
+                    }
+                }
             }
         }
     }
