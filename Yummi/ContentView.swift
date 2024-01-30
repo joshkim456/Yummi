@@ -9,21 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let ingredientExamples = Ingredients()
+    @State var ingredientExamples = Ingredients()
     
     @State var inputName = ""
-    @State var inputQuantity = ""
+    @State var inputQuantity: Int = 0 {
+        didSet {
+            if inputQuantity < 0 {
+                inputQuantity = 0
+            }
+        }
+    }
     @State var inputUnit = ""
     @State var inputCategory = ""
     @State var inputExpiryDate = ""
     
-    @State private var selectedIngredient: Int = 0 {
-        didSet {
-            if selectedIngredient >= ingredientExamples.ingredients.count {
-                selectedIngredient = 0
-            }
-        }
-    }
+    @State private var selectedIngredient: Int = 0
     
     @State private var selectedCategory: Category = .carbs
     @State private var selectedUnit: Units = .g
@@ -40,24 +40,37 @@ struct ContentView: View {
                 }
             }
             Section {
-                Text("Enter a new ingredient: ")
-                TextField("Name:", text: $inputName)
-                TextField("Quantity:", text: $inputQuantity)
-                
                 VStack {
-                    Picker("Category:", selection: $selectedCategory) {
-                        ForEach(Category.allCases, id: \.self) {
-                            category in Text(category.rawValue)
+                    VStack {
+                        Text("Enter a new ingredient: ")
+                            .padding()
+                        TextField("Name:", text: $inputName)
+                        Spacer()
+                        Stepper("Quantity: \(inputQuantity)", value: $inputQuantity, in: 0...Int.max)
+                        Spacer()
+                        TextField("Expiry date (yyyy/mm/dd):", text: $inputExpiryDate)
+                        Spacer()
+                    }
+                    VStack {
+                        Picker("Category:", selection: $selectedCategory) {
+                            ForEach(Category.allCases, id: \.self) {
+                                category in Text(category.rawValue)
+                            }
+                        }
+                    }
+                    
+                    VStack {
+                        Picker("Unit", selection: $selectedUnit) {
+                            ForEach(Units.allCases, id: \.self) {
+                                unit in Text(unit.rawValue)
+                            }
                         }
                     }
                 }
                 
-                VStack {
-                    Picker("Unit:", selection: $selectedUnit) {
-                        ForEach(Unit.allCases, id: \.self) {
-                            unit in Text(unit.rawValue)
-                        }
-                    }
+                Button("Enter:") {
+                    let newIngredient = Ingredient(name: inputName, quantity: inputQuantity, unit: Units(rawValue: inputUnit)!, category: Category(rawValue: inputCategory)!, expiryDate: DateMaker.makeDate(from: inputExpiryDate) ?? Date())
+                    ingredientExamples.ingredients.append(newIngredient)
                 }
             }
         }
