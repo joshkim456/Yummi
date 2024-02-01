@@ -13,6 +13,7 @@ enum Category: String, CaseIterable {
     case carbs = "Carbs"
     case drink = "Drink"
     case dairy = "Dairy"
+    case invalid = "Invalid Category"
 }
 
 enum Units: String, CaseIterable {
@@ -20,6 +21,7 @@ enum Units: String, CaseIterable {
     case g = "g"
     case ml = "ml"
     case l = "l"
+    case invalid = "Invalid Unit"
 }
 
 struct Ingredient {

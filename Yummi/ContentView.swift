@@ -69,8 +69,15 @@ struct ContentView: View {
                 }
                 
                 Button("Enter:") {
-                    let newIngredient = Ingredient(name: inputName, quantity: inputQuantity, unit: Units(rawValue: inputUnit)!, category: Category(rawValue: inputCategory)!, expiryDate: DateMaker.makeDate(from: inputExpiryDate) ?? Date())
+                    let newIngredient = Ingredient(name: inputName, quantity: inputQuantity, unit: Units(rawValue: inputUnit) ?? .invalid, category: Category(rawValue: inputCategory) ?? .invalid, expiryDate: DateMaker.makeDate(from: inputExpiryDate) ?? Date())
                     ingredientExamples.ingredients.append(newIngredient)
+                    
+                    inputUnit = ""
+                    inputCategory = ""
+                    inputExpiryDate = ""
+                    selectedIngredient = 0
+                    selectedCategory = .carbs
+                    selectedUnit = .g
                 }
             }
         }
