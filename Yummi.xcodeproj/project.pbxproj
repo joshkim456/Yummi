@@ -100,8 +100,9 @@
 		245D3E752B5FC52A0020D605 /* Yummi */ = {
 			isa = PBXGroup;
 			children = (
+				24E5813B2B6D585700EA440E /* View */,
+				24E5813A2B6D585100EA440E /* Model */,
 				245D3E762B5FC52A0020D605 /* YummiApp.swift */,
-				245D3E782B5FC52A0020D605 /* ContentView.swift */,
 				245D3E7A2B5FC52E0020D605 /* Assets.xcassets */,
 				245D3E7C2B5FC52E0020D605 /* Preview Content */,
 			);
@@ -112,9 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				245D3E7D2B5FC52E0020D605 /* Preview Assets.xcassets */,
-				245D3EA02B5FC7740020D605 /* Ingredient.swift */,
-				245D3EA22B5FD16F0020D605 /* Ingredients.swift */,
-				245D3EA42B5FD31F0020D605 /* DateMaker.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -134,6 +132,24 @@
 				245D3E932B5FC52F0020D605 /* YummiUITestsLaunchTests.swift */,
 			);
 			path = YummiUITests;
+			sourceTree = "<group>";
+		};
+		24E5813A2B6D585100EA440E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				245D3EA02B5FC7740020D605 /* Ingredient.swift */,
+				245D3EA22B5FD16F0020D605 /* Ingredients.swift */,
+				245D3EA42B5FD31F0020D605 /* DateMaker.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		24E5813B2B6D585700EA440E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				245D3E782B5FC52A0020D605 /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

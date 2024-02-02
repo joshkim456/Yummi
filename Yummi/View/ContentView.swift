@@ -19,11 +19,16 @@ struct ContentView: View {
             }
         }
     }
-    @State var inputUnit = ""
-    @State var inputCategory = ""
+
     @State var inputExpiryDate = ""
     
-    @State private var selectedIngredient: Int = 0
+    @State private var selectedIngredient: Int = 0 {
+        didSet {
+            if selectedIngredient >= ingredientExamples.ingredients.count {
+                selectedIngredient = 0
+            }
+        }
+    }
     
     @State private var selectedCategory: Category = .carbs
     @State private var selectedUnit: Units = .g
@@ -69,13 +74,13 @@ struct ContentView: View {
                 }
                 
                 Button("Enter:") {
-                    let newIngredient = Ingredient(name: inputName, quantity: inputQuantity, unit: Units(rawValue: inputUnit) ?? .invalid, category: Category(rawValue: inputCategory) ?? .invalid, expiryDate: DateMaker.makeDate(from: inputExpiryDate) ?? Date())
+                    let newIngredient = Ingredient(name: inputName, quantity: inputQuantity, unit: Units(rawValue: selectedUnit.rawValue) ?? .invalid, category: Category(rawValue: selectedCategory.rawValue) ?? .invalid, expiryDate: DateMaker.makeDate(from: inputExpiryDate) ?? Date())
                     ingredientExamples.ingredients.append(newIngredient)
                     
-                    inputUnit = ""
-                    inputCategory = ""
+                    selectedUnit = .g
+                    selectedCategory = .carbs
                     inputExpiryDate = ""
-                    selectedIngredient = 0
+                    inputQuantity = 0
                     selectedCategory = .carbs
                     selectedUnit = .g
                 }
