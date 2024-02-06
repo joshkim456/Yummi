@@ -17,6 +17,8 @@
 		245D3EA12B5FC7740020D605 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D3EA02B5FC7740020D605 /* Ingredient.swift */; };
 		245D3EA32B5FD16F0020D605 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D3EA22B5FD16F0020D605 /* Ingredients.swift */; };
 		245D3EA52B5FD31F0020D605 /* DateMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D3EA42B5FD31F0020D605 /* DateMaker.swift */; };
+		249B77532B723CFF00F4D865 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249B77522B723CFF00F4D865 /* Recipe.swift */; };
+		249B77552B7244EA00F4D865 /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249B77542B7244EA00F4D865 /* RecipesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		245D3EA02B5FC7740020D605 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		245D3EA22B5FD16F0020D605 /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
 		245D3EA42B5FD31F0020D605 /* DateMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateMaker.swift; sourceTree = "<group>"; };
+		249B77522B723CFF00F4D865 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		249B77542B7244EA00F4D865 /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 				245D3EA02B5FC7740020D605 /* Ingredient.swift */,
 				245D3EA22B5FD16F0020D605 /* Ingredients.swift */,
 				245D3EA42B5FD31F0020D605 /* DateMaker.swift */,
+				249B77522B723CFF00F4D865 /* Recipe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				245D3E782B5FC52A0020D605 /* ContentView.swift */,
+				249B77542B7244EA00F4D865 /* RecipesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -285,8 +291,10 @@
 				245D3EA52B5FD31F0020D605 /* DateMaker.swift in Sources */,
 				245D3EA32B5FD16F0020D605 /* Ingredients.swift in Sources */,
 				245D3E792B5FC52A0020D605 /* ContentView.swift in Sources */,
+				249B77532B723CFF00F4D865 /* Recipe.swift in Sources */,
 				245D3E772B5FC52A0020D605 /* YummiApp.swift in Sources */,
 				245D3EA12B5FC7740020D605 /* Ingredient.swift in Sources */,
+				249B77552B7244EA00F4D865 /* RecipesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
