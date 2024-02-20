@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2406A34E2B84B09D00C3A378 /* IngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406A34D2B84B09D00C3A378 /* IngredientsView.swift */; };
 		245D3E772B5FC52A0020D605 /* YummiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D3E762B5FC52A0020D605 /* YummiApp.swift */; };
 		245D3E792B5FC52A0020D605 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D3E782B5FC52A0020D605 /* ContentView.swift */; };
 		245D3E7B2B5FC52E0020D605 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 245D3E7A2B5FC52E0020D605 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2406A34D2B84B09D00C3A378 /* IngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsView.swift; sourceTree = "<group>"; };
 		245D3E732B5FC52A0020D605 /* Yummi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yummi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		245D3E762B5FC52A0020D605 /* YummiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummiApp.swift; sourceTree = "<group>"; };
 		245D3E782B5FC52A0020D605 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				245D3E782B5FC52A0020D605 /* ContentView.swift */,
 				249B77542B7244EA00F4D865 /* RecipesView.swift */,
+				2406A34D2B84B09D00C3A378 /* IngredientsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				245D3E772B5FC52A0020D605 /* YummiApp.swift in Sources */,
 				245D3EA12B5FC7740020D605 /* Ingredient.swift in Sources */,
 				249B77552B7244EA00F4D865 /* RecipesView.swift in Sources */,
+				2406A34E2B84B09D00C3A378 /* IngredientsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
