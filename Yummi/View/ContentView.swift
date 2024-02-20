@@ -11,12 +11,17 @@ struct ContentView: View {
     @State private var isOn = false
     
     var body: some View {
-        Toggle(isOn: $isOn) {
+        VStack {
             if isOn {
                 IngredientsView()
             } else {
                 RecipesView(recipes: Recipe.recipes)
             }
+            Toggle(isOn: $isOn) {
+                Text("Show Ingredients")
+                    .padding()
+            }
+            .padding()
         }
     }
 }
