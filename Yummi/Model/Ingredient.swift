@@ -24,12 +24,16 @@ enum Units: String, CaseIterable {
     case invalid = "Invalid Unit"
 }
 
-struct Ingredient {
+struct Ingredient: Identifiable {
     let name: String
     var quantity: Int
     let unit: Units
     let category: Category
     let expiryDate: Date
+    
+    var id: String {
+        name
+    }
     
     func displayInformation() -> String {
         let displayFormatter = DateFormatter()
@@ -38,14 +42,17 @@ struct Ingredient {
         let formattedExpiryDate = displayFormatter.string(from: expiryDate)
 
         
-        return (
-        """
-        Name: \(name)
-        Quantity: \(quantity)
-        Unit: \(unit.rawValue)
-        Category: \(category.rawValue)
-        Expiry Date: \(formattedExpiryDate)
-        """
-        )
+        return "\(quantity)\(unit) of \(name) \(category) which expires on \(formattedExpiryDate)"
     }
+    
+    #if DEBUG
+
+    static var ingredients = [Ingredient(name: "Apple", quantity: 20, unit: .kg, category: .fruitsAndVeg, expiryDate: DateMaker.makeDate(from: "2024-01-01") ?? Date()),
+                       Ingredient(name: "Banana", quantity: 169, unit: .kg, category: .fruitsAndVeg, expiryDate: DateMaker.makeDate(from: "2024-05-06") ?? Date()),
+                       Ingredient(name: "Peach", quantity: 420, unit: .kg, category: .fruitsAndVeg, expiryDate: DateMaker.makeDate(from: "2024-02-29") ?? Date()),
+                       Ingredient(name: "Cow", quantity: 1, unit: .kg, category: .meats, expiryDate: DateMaker.makeDate(from: "2024-08-14") ?? Date())
+                       
+    ]
+
+    #endif
 }

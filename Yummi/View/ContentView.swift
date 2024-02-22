@@ -13,15 +13,14 @@ struct ContentView: View {
     var body: some View {
         VStack {
             if isOn {
-                IngredientsView()
+                IngredientsView(ingredients: Ingredient.ingredients)
             } else {
                 RecipesView(recipes: Recipe.recipes)
             }
             Toggle(isOn: $isOn) {
                 Text("Show Ingredients")
-                    .padding()
             }
-            .padding()
+            .padding(.horizontal)
         }
     }
 }

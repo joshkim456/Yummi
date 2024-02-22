@@ -9,7 +9,11 @@ import SwiftUI
 
 struct IngredientsView: View {
     
-    @State var ingredientExamples = Ingredients()
+    @State var ingredients: [Ingredient] {
+        didSet {
+        
+        }
+    }
     
     @State var inputName = ""
     @State var inputQuantity: Int = 0 {
@@ -24,7 +28,7 @@ struct IngredientsView: View {
     
     @State private var selectedIngredient: Int = 0 {
         didSet {
-            if selectedIngredient >= ingredientExamples.ingredients.count {
+            if selectedIngredient >= ingredients.count {
                 selectedIngredient = 0
             }
         }
@@ -36,11 +40,13 @@ struct IngredientsView: View {
     var body: some View {
         Form {
             Section {
-                VStack(alignment: .leading, spacing: 20) {
-                    Text(ingredientExamples.ingredients[selectedIngredient].displayInformation())
-                    Button("Next ingredient", action: {
-                        selectedIngredient += 1
-                    })
+                List {
+                    ForEach(ingredients, id: \.self.id) { ingredient in
+                        Text(ingredient.displayInformation())
+                    }
+                    .onDelete { indexSet in
+                        ingredients.remove(atOffsets: indexSet)
+                    }
                 }
             }
             Section {
@@ -78,7 +84,7 @@ struct IngredientsView: View {
                 
                 Button("Enter:") {
                     let newIngredient = Ingredient(name: inputName, quantity: inputQuantity, unit: Units(rawValue: selectedUnit.rawValue) ?? .invalid, category: Category(rawValue: selectedCategory.rawValue) ?? .invalid, expiryDate: inputExpiryDate)
-                    ingredientExamples.ingredients.append(newIngredient)
+                    ingredients.append(newIngredient)
                     
                     inputName = ""
                     selectedCategory = .carbs
@@ -93,6 +99,6 @@ struct IngredientsView: View {
 }
 
 #Preview {
-    IngredientsView()
+    IngredientsView(ingredients: Ingredient.ingredients)
 }
 
