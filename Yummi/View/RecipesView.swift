@@ -17,12 +17,37 @@ struct RecipesView: View {
         }
     }
     
+    let onImage = Image(systemName: "star.fill")
+    let offImage = Image(systemName: "star")
+    
     var body: some View {
         List {
             ForEach(recipes, id: \.self.id) { recipe in
                 HStack {
-                    Text("\(recipe.name)")
-                    Text("Rating: \(recipe.rating)")
+                    VStack(alignment: .leading) {
+                        Text("\(recipe.name)")
+                            .font(.title)
+                            .lineLimit(nil)
+                        Text("\(recipe.ingredientsNeeded.count) ingredients needed")
+                            .foregroundStyle(Color.gray)
+                        HStack {
+                            ForEach(1...5, id: \.self) { number in
+                                if number > recipe.rating {
+                                    offImage
+                                } else {
+                                    onImage
+                                }
+                            }
+                        }
+                    }
+                    
+                    VStack(alignment: .trailing) {
+                        if recipe.isFavourite {
+                            Image(systemName: "heart.fill")
+                        } else {
+                            Image(systemName: "heart")
+                        }
+                    }
                 }
             }
         }

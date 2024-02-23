@@ -9,11 +9,7 @@ import SwiftUI
 
 struct IngredientsView: View {
     
-    @State var ingredients: [Ingredient] {
-        didSet {
-        
-        }
-    }
+    @State var ingredients: [Ingredient]
     
     @State var inputName = ""
     @State var inputQuantity: Int = 0 {
@@ -26,14 +22,6 @@ struct IngredientsView: View {
 
     @State var inputExpiryDate = Date()
     
-    @State private var selectedIngredient: Int = 0 {
-        didSet {
-            if selectedIngredient >= ingredients.count {
-                selectedIngredient = 0
-            }
-        }
-    }
-    
     @State private var selectedCategory: Category = .carbs
     @State private var selectedUnit: Units = .g
         
@@ -41,6 +29,7 @@ struct IngredientsView: View {
         Form {
             Section {
                 List {
+                    
                     ForEach(ingredients, id: \.self.id) { ingredient in
                         Text(ingredient.displayInformation())
                     }
@@ -85,6 +74,7 @@ struct IngredientsView: View {
                 Button("Enter:") {
                     let newIngredient = Ingredient(name: inputName, quantity: inputQuantity, unit: Units(rawValue: selectedUnit.rawValue) ?? .invalid, category: Category(rawValue: selectedCategory.rawValue) ?? .invalid, expiryDate: inputExpiryDate)
                     ingredients.append(newIngredient)
+                    ingredients = ingredients.sorted(by: { $0.expiryDate < $1.expiryDate })
                     
                     inputName = ""
                     selectedCategory = .carbs
