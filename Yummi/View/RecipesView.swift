@@ -62,8 +62,8 @@ struct RecipesView: View {
                             VStack(alignment: .trailing) {
                                 if recipe.isFavourite {
                                     Image(systemName: "heart.fill")
-                                } else {
-                                    Image(systemName: "heart")
+                                        .foregroundStyle(Color.red)
+                                        .font(.caption)
                                 }
                             }
                         }

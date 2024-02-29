@@ -17,6 +17,7 @@ struct RecipeDetailView: View {
             Text("\(recipe.name)")
                 .font(.system(size: 30))
                 .fontWeight(.bold)
+                .padding(.top, 100)
             Image(recipe.imageFilePath)
                 .resizable()
                 .scaledToFill()
@@ -45,9 +46,11 @@ struct RecipeDetailView: View {
                 .fontWeight(.bold)
             ForEach(recipe.ingredientsNeeded, id: \.self.name) { ingredient in
                 Text("\(ingredient.displayInformation())")
+                    .lineLimit(nil)
             }
             .padding(.vertical, 2)
             Divider()
+            
             ForEach(recipe.steps, id: \.self) { step in
                 Text("\(step)")
             }

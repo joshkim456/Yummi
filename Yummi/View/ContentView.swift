@@ -18,7 +18,7 @@ struct ContentView: View {
             .padding(.horizontal)
             
             if isOn {
-                IngredientsView(ingredients: Ingredient.ingredients.sorted(by: { $0.expiryDate < $1.expiryDate }))
+                IngredientsView()
             } else {
                 RecipesView(recipes: Recipe.recipes.sorted(by: { $0.rating < $1.rating }))
             }
