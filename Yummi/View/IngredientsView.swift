@@ -25,40 +25,13 @@ struct IngredientsView: View {
                 }
             }
             Section {
-                VStack {
-                    VStack {
-                        Text("Enter a new ingredient: ")
-                            .padding()
-                        TextField("Name:", text: $ingredientsViewModel.inputName)
-                        Spacer()
-                        Stepper("Quantity: \(ingredientsViewModel.inputQuantity)", value: $ingredientsViewModel.inputQuantity, in: 0...Int.max)
-                        Spacer()
-                        DatePicker(
-                            "Expiry Date",
-                            selection: $ingredientsViewModel.inputExpiryDate,
-                            displayedComponents: [.date]
-                        )
-                        Spacer()
-                    }
-                    VStack {
-                        Picker("Category:", selection: $ingredientsViewModel.selectedCategory) {
-                            ForEach(Category.allCases, id: \.self) {
-                                category in Text(category.rawValue)
-                            }
-                        }
-                    }
-                    
-                    VStack {
-                        Picker("Unit", selection: $ingredientsViewModel.selectedUnit) {
-                            ForEach(Units.allCases, id: \.self) {
-                                unit in Text(unit.rawValue)
-                            }
-                        }
-                    }
+                Button("Add Ingredient") {
+                    ingredientsViewModel.showingSheet.toggle()
                 }
-                
-                Button("Enter") {
-                    ingredientsViewModel.addNewIngredient()
+                .sheet(isPresented: $ingredientsViewModel.showingSheet) {
+                    Form {
+                        AddIngredientView(ingredientsViewModel: ingredientsViewModel)
+                    }
                 }
             }
         }

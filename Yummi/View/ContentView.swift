@@ -11,17 +11,17 @@ struct ContentView: View {
     @State private var isOn = false
     
     var body: some View {
-        VStack {
-            Toggle(isOn: $isOn) {
-                Text("Show Ingredients")
-            }
-            .padding(.horizontal)
+        TabView {
+            RecipesView(recipes: Recipe.recipes.sorted(by: { $0.rating < $1.rating }))
+                .tabItem {
+                    Label("Recipes", systemImage: "list.number")
+                }
             
-            if isOn {
-                IngredientsView()
-            } else {
-                RecipesView(recipes: Recipe.recipes.sorted(by: { $0.rating < $1.rating }))
-            }
+            IngredientsView()
+                .tabItem {
+                    Label("Ingredients", systemImage: "cube.box")
+                }
+
         }
     }
 }

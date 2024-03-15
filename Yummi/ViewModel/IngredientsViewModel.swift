@@ -9,6 +9,8 @@ import Foundation
 
 @Observable
 class IngredientsViewModel {
+    var showingSheet = false
+    
     var ingredients: [Ingredient]
     
     var inputName = ""

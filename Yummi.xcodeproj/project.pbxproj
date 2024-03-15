@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2406A34E2B84B09D00C3A378 /* IngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406A34D2B84B09D00C3A378 /* IngredientsView.swift */; };
+		242DEFDF2BA4B3FD003AF5CE /* AddIngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242DEFDE2BA4B3FD003AF5CE /* AddIngredientView.swift */; };
 		24483A812B8DEEC1003697CD /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24483A802B8DEEC1003697CD /* RecipeDetailView.swift */; };
 		245D3E772B5FC52A0020D605 /* YummiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D3E762B5FC52A0020D605 /* YummiApp.swift */; };
 		245D3E792B5FC52A0020D605 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D3E782B5FC52A0020D605 /* ContentView.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		2406A34D2B84B09D00C3A378 /* IngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsView.swift; sourceTree = "<group>"; };
+		242DEFDE2BA4B3FD003AF5CE /* AddIngredientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientView.swift; sourceTree = "<group>"; };
 		24483A802B8DEEC1003697CD /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		245D3E732B5FC52A0020D605 /* Yummi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yummi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		245D3E762B5FC52A0020D605 /* YummiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummiApp.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				249B77542B7244EA00F4D865 /* RecipesView.swift */,
 				2406A34D2B84B09D00C3A378 /* IngredientsView.swift */,
 				24483A802B8DEEC1003697CD /* RecipeDetailView.swift */,
+				242DEFDE2BA4B3FD003AF5CE /* AddIngredientView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				249B77532B723CFF00F4D865 /* Recipe.swift in Sources */,
 				245D3E772B5FC52A0020D605 /* YummiApp.swift in Sources */,
 				245D3EA12B5FC7740020D605 /* Ingredient.swift in Sources */,
+				242DEFDF2BA4B3FD003AF5CE /* AddIngredientView.swift in Sources */,
 				249B77552B7244EA00F4D865 /* RecipesView.swift in Sources */,
 				2406A34E2B84B09D00C3A378 /* IngredientsView.swift in Sources */,
 				24483A812B8DEEC1003697CD /* RecipeDetailView.swift in Sources */,
