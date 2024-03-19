@@ -28,10 +28,10 @@ struct Recipe: Identifiable {
     
     static let recipes = [
         Recipe.createRecipe(name: "Pasta with Tomato Sauce", ingredientsNeeded: [
-            Ingredient(name: "Tomato", quantity: 2, unit: .kg, category: .fruitsAndVeg, expiryDate: Date()),
-            Ingredient(name: "Pasta", quantity: 1, unit: .kg, category: .carbs, expiryDate: Date()),
-            Ingredient(name: "Garlic", quantity: 50, unit: .g, category: .fruitsAndVeg, expiryDate: Date()),
-            Ingredient(name: "Olive Oil", quantity: 100, unit: .ml, category: .carbs, expiryDate: Date())
+            Ingredient(name: "Tomato", quantity: 2, unit: .kg, category: .fruitsAndVeg),
+            Ingredient(name: "Pasta", quantity: 1, unit: .kg, category: .carbs),
+            Ingredient(name: "Garlic", quantity: 50, unit: .g, category: .fruitsAndVeg),
+            Ingredient(name: "Olive Oil", quantity: 100, unit: .ml, category: .carbs)
         ], isFavourite: true, rating: 5, steps: [
             "Bring a large pot of salted water to a boil.",
             "While waiting for the water to boil, wash and chop the tomatoes into small pieces.",
@@ -49,10 +49,10 @@ struct Recipe: Identifiable {
         ], imageFilePath: "pastaWithTomatoSauce"),
         
         Recipe.createRecipe(name: "Grilled Chicken Salad", ingredientsNeeded: [
-            Ingredient(name: "Chicken Breast", quantity: 500, unit: .g, category: .meats, expiryDate: Date()),
-            Ingredient(name: "Lettuce", quantity: 10, unit: .g, category: .fruitsAndVeg, expiryDate: Date()),
-            Ingredient(name: "Cucumber", quantity: 1, unit: .kg, category: .fruitsAndVeg, expiryDate: Date()),
-            Ingredient(name: "Tomato", quantity: 100, unit: .g, category: .fruitsAndVeg, expiryDate: Date())
+            Ingredient(name: "Chicken Breast", quantity: 500, unit: .g, category: .meats),
+            Ingredient(name: "Lettuce", quantity: 10, unit: .g, category: .fruitsAndVeg),
+            Ingredient(name: "Cucumber", quantity: 1, unit: .kg, category: .fruitsAndVeg),
+            Ingredient(name: "Tomato", quantity: 100, unit: .g, category: .fruitsAndVeg)
         ], isFavourite: true, rating: 4, steps: [
             "Preheat your grill to medium-high heat.",
             "Season the chicken breast with salt, pepper, and any other desired seasonings.",
@@ -70,9 +70,9 @@ struct Recipe: Identifiable {
         ], imageFilePath: "grilledChickenSalad"),
         
         Recipe.createRecipe(name: "Banana Smoothie", ingredientsNeeded: [
-            Ingredient(name: "Banana", quantity: 100, unit: .g, category: .fruitsAndVeg, expiryDate: Date()),
-            Ingredient(name: "Milk", quantity: 250, unit: .ml, category: .dairy, expiryDate: Date()),
-            Ingredient(name: "Honey", quantity: 20, unit: .ml, category: .carbs, expiryDate: Date())
+            Ingredient(name: "Banana", quantity: 100, unit: .g, category: .fruitsAndVeg),
+            Ingredient(name: "Milk", quantity: 250, unit: .ml, category: .dairy),
+            Ingredient(name: "Honey", quantity: 20, unit: .ml, category: .carbs)
         ], isFavourite: false, rating: 3, steps: [
             "Peel the banana and cut it into small pieces.",
             "Pour the milk into a blender.",

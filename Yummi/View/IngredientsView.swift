@@ -9,13 +9,12 @@ import SwiftUI
 
 struct IngredientsView: View {
     
-    @State var ingredientsViewModel: IngredientsViewModel = IngredientsViewModel()
+    @State var ingredientsViewModel: IngredientsViewModel = IngredientsViewModel.shared
     
     var body: some View {
         Form {
             Section {
                 List {
-                    
                     ForEach(ingredientsViewModel.ingredients, id: \.self.id) { ingredient in
                         Text(ingredient.displayInformation())
                     }

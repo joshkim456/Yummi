@@ -50,7 +50,7 @@ struct AddIngredientView: View {
 
 #Preview {
     Form {
-        AddIngredientView(ingredientsViewModel: IngredientsViewModel())
+        AddIngredientView(ingredientsViewModel: IngredientsViewModel.shared)
     }
 }
 

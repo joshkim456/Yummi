@@ -9,9 +9,11 @@ import Foundation
 
 @Observable
 class IngredientsViewModel {
+    static let shared = IngredientsViewModel()
+    
     var showingSheet = false
     
-    var ingredients: [Ingredient]
+    var ingredients: [InventoryIngredient]
     
     var inputName = ""
     var inputQuantity: Int = 0 {
@@ -28,7 +30,7 @@ class IngredientsViewModel {
     var selectedUnit: Units = .g
     
     func addNewIngredient() {
-        let newIngredient = Ingredient(name: inputName, quantity: inputQuantity, unit: Units(rawValue: selectedUnit.rawValue) ?? .invalid, category: Category(rawValue: selectedCategory.rawValue) ?? .invalid, expiryDate: inputExpiryDate)
+        let newIngredient = InventoryIngredient(ingredient: Ingredient(name: inputName, quantity: inputQuantity, unit: Units(rawValue: selectedUnit.rawValue) ?? .invalid, category: Category(rawValue: selectedCategory.rawValue) ?? .invalid), expiryDate: inputExpiryDate)
         ingredients.append(newIngredient)
         ingredients = ingredients.sorted(by: { $0.expiryDate < $1.expiryDate })
         
@@ -40,8 +42,8 @@ class IngredientsViewModel {
         selectedUnit = .g
     }
     
-    init() {
-        ingredients = Ingredient.ingredients.sorted(by: { $0.expiryDate < $1.expiryDate })
+    private init() {
+        ingredients = InventoryIngredient.inventory.sorted(by: { $0.expiryDate < $1.expiryDate })
     }
     
 }

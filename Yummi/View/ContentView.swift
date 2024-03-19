@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            RecipesView(recipes: Recipe.recipes.sorted(by: { $0.rating < $1.rating }))
+            RecipesView(recipesViewModel: RecipesViewModel.shared)
                 .tabItem {
                     Label("Recipes", systemImage: "list.number")
                 }
@@ -21,7 +21,6 @@ struct ContentView: View {
                 .tabItem {
                     Label("Ingredients", systemImage: "cube.box")
                 }
-
         }
     }
 }

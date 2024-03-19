@@ -8,32 +8,16 @@
 import SwiftUI
 
 struct RecipesView: View {
-    var recipes: [Recipe]
-    @State var currentIngredient: Int = 0 {
-        didSet {
-            if currentIngredient >= recipes[1].ingredientsNeeded.count {
-                currentIngredient = 0
-            }
-        }
-    }
-    
-    let onImage = Image(systemName: "star.fill")
-    let offImage = Image(systemName: "star")
-    
-    @State private var searchText = ""
-    
-    var filteredRecipes: [Recipe] {
-        if searchText.isEmpty {
-            return recipes
-        } else {
-            return recipes.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
-        }
-    }
+    @State var recipesViewModel: RecipesViewModel = RecipesViewModel.shared
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(filteredRecipes, id: \.self.id) { recipe in
+                Picker("Filter:", selection: $recipesViewModel.filterType) {
+                    Text("By Rating").tag(FilterType.byRating)
+                    Text("By Availability").tag(FilterType.available)
+                }
+                ForEach(recipesViewModel.filteredRecipes, id: \.self.id) { recipe in
                     NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
                         HStack {
                             VStack(alignment: .leading) {
@@ -45,10 +29,10 @@ struct RecipesView: View {
                                 HStack {
                                     ForEach(1...5, id: \.self) { number in
                                         if number > recipe.rating {
-                                            offImage
+                                            recipesViewModel.offImage
                                                 .font(.caption)
                                         } else {
-                                            onImage
+                                            recipesViewModel.onImage
                                                 .font(.caption)
                                         }
                                     }
@@ -72,10 +56,10 @@ struct RecipesView: View {
             }
             .navigationTitle("Recipes")
         }
-        .searchable(text: $searchText)
+        .searchable(text: $recipesViewModel.searchText)
     }
 }
 
 #Preview {
-    RecipesView(recipes: Recipe.recipes)
+    RecipesView(recipesViewModel: RecipesViewModel.shared)
 }
